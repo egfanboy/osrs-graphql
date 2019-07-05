@@ -19,6 +19,7 @@ const mongoURI = `${DB_BASE_URI}/${DB_NAME}`;
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
+  console.log(`Attempting to connect to mongoDB with URI: ${mongoURI}`);
   mongoose
     .connect(mongoURI, { useNewUrlParser: true, useFindAndModify: false })
     .then(() => console.log('Successfully connected to mongoDB'))
